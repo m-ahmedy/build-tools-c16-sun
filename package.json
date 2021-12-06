@@ -3,20 +3,28 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/server/index.js",
-    "start:dev": "nodemon src/server/index.js",
-    "dev": "webpack serve --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js"
+    "test": "jest",
+    "start": "set NODE_ENV=production&& node src/server/index.js",
+    "start:dev": "set NODE_ENV=development&& nodemon src/server/index.js",
+    "dev": "set NODE_ENV=development&& webpack serve --config webpack.dev.js --open",
+    "build": "set NODE_ENV=production&& webpack --config webpack.prod.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "jest": "^27.4.3",
+    "mini-css-extract-plugin": "^1.6.2",
+    "node-fetch": "^2.6.6",
+    "optimize-css-assets-webpack-plugin": "^6.0.1",
+    "terser-webpack-plugin": "^4.2.3",
     "webpack": "^4.46.0",
-    "webpack-cli": "^4.9.1"
+    "webpack-cli": "^4.9.1",
+    "workbox-webpack-plugin": "^6.4.2"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
